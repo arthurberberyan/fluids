@@ -15,7 +15,7 @@ plt.rcParams.update({
 
 
 N = 200 # total grid points 
-steps =10 # adjust this to control the speed of the animation (10 vs 100)
+steps =100 # adjust this to control the speed of the animation (10 vs 100)
 r_min = 0.01 
 r_max = 10.0 
 y_min = 0.0
@@ -65,6 +65,7 @@ ax.set_xlabel(r"$r$")
 ax.set_ylabel(r"$\Sigma$")
 ax.set_xlim(r_min, r_max)
 ax.set_ylim(y_min, y_max)
+ax.set_title("github.com/arthurberberyan/fluids")
 
 t = [0.0]
 def plot(p):
