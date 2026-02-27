@@ -31,9 +31,9 @@ for i in taus:
 
 ax.set_xlabel("x")
 ax.set_ylabel(r"$\Sigma \ (m/ \pi R_0^2)$")
-ax.legend()
 ax.set_ylim(0, 3.0)
 ax.set_xlim(0.1, 3.0)
 ax.set_title("github.com/arthurberberyan/fluids")
+ax.legend()
 #fig.savefig("ps3_q1.png", dpi=300) 
 plt.show()
