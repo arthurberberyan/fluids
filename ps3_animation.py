@@ -1,6 +1,7 @@
+
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
+import matplotlib.animation as animation
 
 plt.rcParams.update({
 "font.family": "STIXGeneral",
@@ -14,8 +15,8 @@ plt.rcParams.update({
 })
 
 
-N = 200 # total grid points 
-steps =100 # adjust this to control the speed of the animation (10 vs 100)
+N = 300 # total grid points 
+steps =10 # adjust this to control the speed of the animation (10 vs 100)
 r_min = 0.01 
 r_max = 10.0 
 y_min = 0.0
@@ -46,7 +47,7 @@ n = N - 2
 A = (1 + 2*beta)*np.eye(n) - beta*np.eye(n, k=1) - beta*np.eye(n, k=-1)
 
 def solve(s):
-    # Eve reccomends to use.copy() since we will modify here
+    # Eve reccomends to use.copy() since we will modify the array and want to keep original
     advec = s.copy()
 
     # diffusion 
@@ -75,5 +76,5 @@ def plot(p):
     sigma_plot.set_ydata(sigma)
     return sigma_plot
 
-animation = FuncAnimation(fig, plot, interval=50, cache_frame_data=False)
+ani = animation.FuncAnimation(fig, plot, interval=50, cache_frame_data=False)
 plt.show()
