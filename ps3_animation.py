@@ -16,7 +16,7 @@ plt.rcParams.update({
 
 
 N = 300 # total grid points 
-steps =10 # adjust this to control the speed of the animation (10 vs 100)
+N_steps =10 # adjust this to control the speed of the animation (10 vs 100)
 r_min = 0.01 
 r_max = 10.0 
 y_min = 0.0
@@ -70,7 +70,7 @@ ax.set_title("github.com/arthurberberyan/fluids")
 
 t = [0.0]
 def plot(p):
-    for p in range(steps):
+    for p in range(N_steps):
         sigma[:] = solve(sigma)
         t[0] += dt
     sigma_plot.set_ydata(sigma)
