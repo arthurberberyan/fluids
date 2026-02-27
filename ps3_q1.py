@@ -21,14 +21,18 @@ taus = [0.01, 0.05, 0.1, 0.5, 1.0]
 def visc_disk(x, tau):
     return (1.0/(tau * x**0.25)) * np.exp(-(1.0 + x**2)/tau) * iv(0.25, 2.0*x/tau)
 
+fig, ax = plt.subplots()
 # plot the curves for different tau values
 for i in taus:
     y = visc_disk(x, i)
-    plt.plot(x, y, label=fr"$\tau={i}$")
+    ax.plot(x, y, label=fr"$\tau={i}$")
 
-plt.xlabel("x")
-plt.ylabel(r"$\Sigma \ (m/ \pi R_0^2)$")
-plt.legend()
-plt.ylim(0, 3.0)
-plt.xlim(0.1, 3.0)
+
+ax.set_xlabel("x")
+ax.set_ylabel(r"$\Sigma \ (m/ \pi R_0^2)$")
+ax.legend()
+ax.set_ylim(0, 3.0)
+ax.set_xlim(0.1, 3.0)
+ax.set_title("github.com/arthurberberyan/fluids")
+#fig.savefig("ps3_q1.png", dpi=300) 
 plt.show()
